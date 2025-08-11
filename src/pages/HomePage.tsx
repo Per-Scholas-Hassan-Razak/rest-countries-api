@@ -1,12 +1,23 @@
-import Container from "@mui/material/Container"
-import Header from "../components/Header"
+import { Box } from "@mui/material";
+import SearchInput from "../components/SearchInput";
+import RegionFilter from "../components/RegionFilter";
+import CountriesGrid from "../components/CountriesGrid";
 
 const HomePage = () => {
-    return(
-        <Container maxWidth='lg'>
-            <Header />
-        </Container>
-    )
-}
+  return (
+    <>
+      <Box
+        sx={{
+          display: "flex",
+          mt: 4,
+        }}
+      >
+        <SearchInput />
+        <RegionFilter />
+      </Box>
+      <CountriesGrid />
+    </>
+  );
+};
 
-export default HomePage
+export default HomePage;
