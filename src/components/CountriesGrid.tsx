@@ -2,11 +2,14 @@ import { useCountryBackUp } from "../contexts/contexts"
 
 const CountriesGrid = () => 
 {
-    const {countries} = useCountryBackUp();
+    const {countriesBU} = useCountryBackUp();
 
-    if(countries.length === 0) return <p>No Data available</p>
-    return <>
+    if(countriesBU.length === 0) return <p>No Data available</p>
     
+    return <>
+    {countriesBU.map((c) => 
+        <p>{c.name}</p>
+    )}
     </>
 }
 

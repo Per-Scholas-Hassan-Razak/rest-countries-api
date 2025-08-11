@@ -55,6 +55,6 @@ export interface Country {
   independent: boolean;
 }
 export interface CountryBUContextProps{
-    countries:Country[];
-    setCountries:Dispatch<SetStateAction<Country[]>>
+    countriesBU:Country[];
+    setCountriesBU:Dispatch<SetStateAction<Country[]>>
 }
