@@ -10,7 +10,7 @@ const CountriesGrid = () => {
   return (
     <Grid container spacing={20} mt={4}>
       {filteredCountries.map((country) => (
-        <Grid item xs={12} sm={6} md={3} key={country.alpha3Code}>
+        <Grid item xs={12} sm={6} md={3} key={`${country.alpha3Code}=${country.area}`}>
           <CountryCard {...country} />
         </Grid>
       ))}

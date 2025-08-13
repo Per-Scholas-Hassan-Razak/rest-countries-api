@@ -1,9 +1,9 @@
-import { AppBar, Box, Toolbar, Typography } from "@mui/material";
+import { AppBar, Box, Toolbar, Typography, } from "@mui/material";
 import ToggleTheme from "./ThemeToggle";
 import type { NavBarProps } from "../types";
+import { Link } from "react-router-dom";
 
 const Navbar = ({ mode, setMode }: NavBarProps) => {
-
   return (
     <AppBar>
       <Toolbar
@@ -26,14 +26,21 @@ const Navbar = ({ mode, setMode }: NavBarProps) => {
             width: { xs: "100%", sm: "auto" },
           }}
         >
-          Where in the world?
+          <Link
+            to="/"
+            style={{
+              textDecoration: "none",
+              color: "inherit",
+            }}
+          >
+            Where in the world?
+          </Link>
         </Typography>
         <Box
           sx={{
             width: { xs: "100%", sm: "auto" },
             display: "flex",
             justifyContent: { xs: "center", sm: "flex-end" },
-            
           }}
         >
           <ToggleTheme mode={mode} setMode={setMode} />

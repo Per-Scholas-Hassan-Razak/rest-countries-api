@@ -9,7 +9,7 @@ const HomePage = () => {
       <Stack
         direction={{ xs: "column", sm: "row" }}
         spacing={2}
-        mt={4}
+        mt={14}
         sx={{
           width: "100%",
           justifyContent: { sm: "space-between" }, 

@@ -55,62 +55,62 @@ export const lightTheme = responsiveFontSizes(
             color: colors.veryDarkBlueText,
           },
         },
-        defaultProps: { color: "primary", elevation: 2, position: "sticky" },
+        defaultProps: { color: "primary", elevation: 2, position: "fixed" },
       },
       MuiCard: {
         defaultProps: { elevation: 0 },
         styleOverrides: { root: { backgroundColor: colors.white } },
       },
-        MuiFormControl: {
-    defaultProps: { size: "small" },
-  },
-    MuiInputLabel: {
-    styleOverrides: {
-      root: ({ theme }) => ({
-        color: theme.palette.text.secondary,
-        "&.Mui-focused": {
-          color: theme.palette.primary.main,
+      MuiFormControl: {
+        defaultProps: { size: "small" },
+      },
+      MuiInputLabel: {
+        styleOverrides: {
+          root: ({ theme }) => ({
+            color: theme.palette.text.secondary,
+            "&.Mui-focused": {
+              color: theme.palette.primary.main,
+            },
+          }),
         },
-      }),
-    },
-  },
-    MuiOutlinedInput: {
-    styleOverrides: {
-      root: ({ theme }) => ({
-        backgroundColor: theme.palette.background.paper,
-        borderRadius: theme.shape.borderRadius,
-        "& .MuiOutlinedInput-notchedOutline": {
-          borderColor: theme.palette.divider,
+      },
+      MuiOutlinedInput: {
+        styleOverrides: {
+          root: ({ theme }) => ({
+            backgroundColor: theme.palette.background.paper,
+            borderRadius: theme.shape.borderRadius,
+            "& .MuiOutlinedInput-notchedOutline": {
+              borderColor: theme.palette.divider,
+            },
+            "&:hover .MuiOutlinedInput-notchedOutline": {
+              borderColor: theme.palette.text.secondary,
+            },
+            "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+              borderColor: theme.palette.primary.main,
+              borderWidth: 2,
+            },
+          }),
         },
-        "&:hover .MuiOutlinedInput-notchedOutline": {
-          borderColor: theme.palette.text.secondary,
+      },
+      MuiSelect: {
+        defaultProps: {
+          displayEmpty: true,
         },
-        "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-          borderColor: theme.palette.primary.main,
-          borderWidth: 2,
+        styleOverrides: {
+          icon: ({ theme }) => ({
+            color: theme.palette.text.secondary,
+          }),
         },
-      }),
-    },
-  },
-   MuiSelect: {
-    defaultProps: {
-      displayEmpty: true,
-    },
-    styleOverrides: {
-      icon: ({ theme }) => ({
-        color: theme.palette.text.secondary,
-      }),
-    },
-  },
-    MuiMenu: {
-    styleOverrides: {
-      paper: ({ theme }) => ({
-        backgroundColor: theme.palette.background.paper,
-        color: theme.palette.text.primary,
-        boxShadow: theme.shadows[8],
-      }),
-    },
-  },
+      },
+      MuiMenu: {
+        styleOverrides: {
+          paper: ({ theme }) => ({
+            backgroundColor: theme.palette.background.paper,
+            color: theme.palette.text.primary,
+            boxShadow: theme.shadows[8],
+          }),
+        },
+      },
 
       MuiTextField: {
         styleOverrides: {
@@ -162,62 +162,62 @@ export const darkTheme = responsiveFontSizes(
             color: colors.white,
           },
         },
-       defaultProps: { color: "primary", elevation: 2, position: "sticky" },
+        defaultProps: { color: "primary", elevation: 2, position: "fixed" },
       },
       MuiCard: {
         defaultProps: { elevation: 0 },
         styleOverrides: { root: { backgroundColor: colors.darkBlueElements } },
       },
       MuiFormControl: {
-    defaultProps: { size: "small" },
-  },
-    MuiInputLabel: {
-    styleOverrides: {
-      root: ({ theme }) => ({
-        color: theme.palette.text.secondary,
-        "&.Mui-focused": {
-          color: theme.palette.primary.main,
+        defaultProps: { size: "small" },
+      },
+      MuiInputLabel: {
+        styleOverrides: {
+          root: ({ theme }) => ({
+            color: theme.palette.text.secondary,
+            "&.Mui-focused": {
+              color: theme.palette.primary.main,
+            },
+          }),
         },
-      }),
-    },
-  },
-    MuiOutlinedInput: {
-    styleOverrides: {
-      root: ({ theme }) => ({
-        backgroundColor: theme.palette.background.paper,
-        borderRadius: theme.shape.borderRadius,
-        "& .MuiOutlinedInput-notchedOutline": {
-          borderColor: theme.palette.divider,
+      },
+      MuiOutlinedInput: {
+        styleOverrides: {
+          root: ({ theme }) => ({
+            backgroundColor: theme.palette.background.paper,
+            borderRadius: theme.shape.borderRadius,
+            "& .MuiOutlinedInput-notchedOutline": {
+              borderColor: theme.palette.divider,
+            },
+            "&:hover .MuiOutlinedInput-notchedOutline": {
+              borderColor: theme.palette.text.secondary,
+            },
+            "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+              borderColor: theme.palette.primary.main,
+              borderWidth: 2,
+            },
+          }),
         },
-        "&:hover .MuiOutlinedInput-notchedOutline": {
-          borderColor: theme.palette.text.secondary,
+      },
+      MuiSelect: {
+        defaultProps: {
+          displayEmpty: true,
         },
-        "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-          borderColor: theme.palette.primary.main,
-          borderWidth: 2,
+        styleOverrides: {
+          icon: ({ theme }) => ({
+            color: theme.palette.text.secondary,
+          }),
         },
-      }),
-    },
-  },
-   MuiSelect: {
-    defaultProps: {
-      displayEmpty: true,
-    },
-    styleOverrides: {
-      icon: ({ theme }) => ({
-        color: theme.palette.text.secondary,
-      }),
-    },
-  },
-    MuiMenu: {
-    styleOverrides: {
-      paper: ({ theme }) => ({
-        backgroundColor: theme.palette.background.paper,
-        color: theme.palette.text.primary,
-        boxShadow: theme.shadows[8],
-      }),
-    },
-  },
+      },
+      MuiMenu: {
+        styleOverrides: {
+          paper: ({ theme }) => ({
+            backgroundColor: theme.palette.background.paper,
+            color: theme.palette.text.primary,
+            boxShadow: theme.shadows[8],
+          }),
+        },
+      },
       MuiTextField: {
         styleOverrides: {
           root: {
