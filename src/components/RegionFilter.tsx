@@ -5,41 +5,33 @@ import {
   type SelectChangeEvent,
 } from "@mui/material";
 import FormControl from "@mui/material/FormControl";
-import { useEffect, useState } from "react";
-import { useCountryBackUp, useFilter } from "../contexts/contexts";
+import { useFilter } from "../contexts/contexts";
 
 const RegionFilter = () => {
-  const { countriesBU } = useCountryBackUp();
-
-  const { region, setRegion, regions} = useFilter();
-
-  // const [regions, setRegions] = useState<string[]>([]);
-
-// useEffect(() => {
-//   const uniqueRegions = [...new Set(filteredCountries.map(c => c.region))].sort();
-//   setRegions(uniqueRegions);
-// }, [filteredCountries]);
-
+  const { region, setRegion, regions } = useFilter();
   const handleChange = (e: SelectChangeEvent<string>) => {
     setRegion(e.target.value as string);
   };
 
   return (
     <FormControl
+      size="small"
       sx={{
-        minWidth: "500px",
-        ml: 4,
+        minWidth: { sm: 320 },
       }}
     >
-      <InputLabel id="region-label">Select Region</InputLabel>
+      <InputLabel id="region-label">Filter Region</InputLabel>
       <Select<string>
         labelId="region-label"
         id="region-select"
         value={region}
-        label="Filter Countries by Region"
+        label="Select Region"
         onChange={handleChange}
+        displayEmpty={false}
       >
-        <MenuItem value="">All Regions</MenuItem>
+        <MenuItem value="">
+          {regions.length === 0 ? "No Regions Exists" : "All Regions"}
+        </MenuItem>
         {regions.map((r) => (
           <MenuItem value={r}>{r}</MenuItem>
         ))}

@@ -69,3 +69,13 @@ export interface FilteredContextProps{
     filteredCountries: Country[];
     
 }
+
+export  interface NavBarProps{
+  mode:"light" | "dark"; 
+  setMode:Dispatch<SetStateAction<"light" | "dark">>
+ }
+ 
+export interface ToggleThemeProps {
+  mode: "light" | "dark";
+  setMode: Dispatch<SetStateAction<"light" | "dark">>;
+}

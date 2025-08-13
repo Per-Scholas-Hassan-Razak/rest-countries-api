@@ -12,7 +12,7 @@ const SearchInput = () => {
   return (
     <TextField
       sx={{
-        flexGrow:1
+        minWidth:450
       }}
       id="outlined-basic"
       label="Search Countries by name, capital, or population..."
