@@ -1,4 +1,4 @@
-import {Grid} from "@mui/material";
+import { Grid} from "@mui/material";
 import {  useFilter } from "../contexts/contexts";
 import CountryCard from "./CountryCard";
 
@@ -8,9 +8,10 @@ const CountriesGrid = () => {
   if (filteredCountries.length === 0) return <p>No Data available</p>;
 
   return (
-    <Grid container spacing={20} mt={4}>
+    <Grid container maxWidth="xl"  spacing={{ xs: 2, sm: 3, md: 3 }}  mt={4} alignItems='stretch'>
+      
       {filteredCountries.map((country) => (
-        <Grid item xs={12} sm={6} md={3} key={`${country.alpha3Code}=${country.area}`}>
+        <Grid item xs={12} sm={6} md={3} key={`${country.alpha3Code}`} sx={{display:'flex', justifyContent: "center",}}>
           <CountryCard {...country} />
         </Grid>
       ))}

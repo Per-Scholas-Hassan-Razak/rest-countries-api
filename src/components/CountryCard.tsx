@@ -1,14 +1,15 @@
 import {
   Box,
   Card,
-  CardActionArea,
+
   CardContent,
   CardMedia,
   Divider,
+  IconButton,
   Typography,
 } from "@mui/material";
 import InfoIcon from "@mui/icons-material/Info";
-import {Link} from 'react-router-dom'
+import { Link } from "react-router-dom";
 
 interface CountryCardProps {
   name: string;
@@ -19,8 +20,8 @@ interface CountryCardProps {
     svg: string;
     png: string;
   };
-  alpha3Code:string, 
-  area:number
+  alpha3Code: string;
+  area: number;
 }
 
 const CountryCard = ({
@@ -30,43 +31,35 @@ const CountryCard = ({
   capital,
   flags,
   alpha3Code,
-  area
 }: CountryCardProps) => {
   return (
     <Card
       variant="outlined"
       sx={{
-        width: "100%",
-        height: "100%",
+        flex: 1,
+        minWidth: 0,
+        width: "350px",
         display: "flex",
         flexDirection: "column",
-        ml: 5,
+        height: { xs: 360, sm: 400, md: 440 },
       }}
     >
-      <Box
+      <CardMedia
+        component="img"
+        src={flags.svg}
+        alt={`flag-of-${name}`}
         sx={{
-          position: "relative",
-          width: "100%",
-          aspectRatio: "3 / 2",
+          width: "350px",
+          height: { xs: 160, sm: 180, md: 200 },
+          objectFit: "cover",
+          display: "block",
           bgcolor: "background.default",
         }}
-      >
-        <CardMedia
-          component="img"
-          src={flags.svg}
-          alt={`flag-of-${name}`}
-          sx={{
-            position: "absolute",
-            inset: 0,
-            width: "100%",
-            height: "100%",
-            objectFit: "contain",
-            display: "block",
-          }}
-        />
-      </Box>
-      <CardContent sx={{ display: "flex", flexDirection: "column", gap: 0.5 }}>
-        <Typography variant="h6">{name}</Typography>
+      />
+      <CardContent sx={{ flexGrow: 1, minWidth: 0 }}>
+        <Typography variant="h6" noWrap title={name}>
+          {name}
+        </Typography>
         <Divider />
         <Typography variant="body2">
           Population: {population.toLocaleString()}
@@ -74,23 +67,16 @@ const CountryCard = ({
         <Typography variant="body2">Region: {region}</Typography>
         <Typography variant="body2">Capital: {capital}</Typography>
       </CardContent>
-      <Link
-      to={`/${alpha3Code}`}
-      >
-      <CardActionArea
-      sx={{
-        display:'flex', 
-        justifyContent:'flex-end', 
-        alignItems:'center',
-        px:1,
-        py:0.5,
-        borderRadius:1,
-        
-      }}
-      >
-        <InfoIcon fontSize="small" color="action" />
-      </CardActionArea>
-        </Link>
+      <Box sx={{ px: 1, pb: 1, display: "flex", justifyContent: "flex-end" }}>
+        <IconButton
+          size="small"
+          component={Link}
+          to={`/${alpha3Code}`}
+          aria-label={`See details for ${name}`}
+        >
+          <InfoIcon />
+        </IconButton>
+      </Box>
     </Card>
   );
 };
