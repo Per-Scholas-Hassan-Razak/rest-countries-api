@@ -4,6 +4,7 @@ import RegionFilter from "../components/RegionFilter";
 import CountriesGrid from "../components/CountriesGrid";
 
 const HomePage = () => {
+  
   return (
     <>
       <Box

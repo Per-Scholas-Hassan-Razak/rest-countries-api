@@ -58,3 +58,14 @@ export interface CountryBUContextProps{
     countriesBU:Country[];
     setCountriesBU:Dispatch<SetStateAction<Country[]>>
 }
+
+export interface FilteredContextProps{
+    searchTerm:string;
+    setSearchTerm:Dispatch<SetStateAction<string>>;
+    region:string;
+    setRegion:Dispatch<SetStateAction<string>>;
+    regions:string[];
+    setRegions:Dispatch<SetStateAction<string[]>>;
+    filteredCountries: Country[];
+    
+}

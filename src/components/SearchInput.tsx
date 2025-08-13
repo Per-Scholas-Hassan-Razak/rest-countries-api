@@ -1,9 +1,12 @@
 import { TextField } from "@mui/material";
+import { useFilter } from "../contexts/contexts";
 
 const SearchInput = () => {
 
+  const {setSearchTerm} = useFilter();
+
   const handleTextInput = (e:React.ChangeEvent<HTMLInputElement>) => {
-    console.log(e.target.value)
+    setSearchTerm(e.target.value)
   }
   
   return (
@@ -12,7 +15,7 @@ const SearchInput = () => {
         flexGrow:1
       }}
       id="outlined-basic"
-      label="Outlined"
+      label="Search Countries by name, capital, or population..."
       variant="outlined"
       onChange={handleTextInput}
     />
