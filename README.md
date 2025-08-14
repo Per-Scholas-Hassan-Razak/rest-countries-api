@@ -1,5 +1,6 @@
 # Frontend Mentor - REST Countries API with color theme switcher solution
 
+
 ### The challenge
 
 Users should be able to:
@@ -13,16 +14,24 @@ Users should be able to:
 
 **⚠️ NOTE ⚠️: Sometimes the REST Countries API can go down. We've added a `data.json` file with all the country data if you prefer to use that instead. However, please be aware that the data in the JSON file might not be up-to-date.**
 
-## Where to find everything
+**⚠️ INSTRUCTOR NOTE ⚠️: Due to the note above I designed and implemented the solution to this project based on the backup data provided by front end mentor. My intention was to prove out the concept and later plug in the fetch request to the real API. However, the typescript interfaces I have created as specifically geared towards the data from`data.json` and the API is now in V3 with some modifications. Therefore, the funtionality as required by the challenge sections has been completed using the local data file. And if I have time to refactor I will run some fetch requests to the updated API and see how much work would entail changing my code to fit the new data shape. But other than that the functionality is there whats missing is API fetch. 
 
-Your task is to build out the project to the designs inside the `/design` folder. 
 
-In this challenge, you will find mobile and desktop designs in light and dark mode color schemes for both pages.
+```bash 
+git clone https://github.com/Per-Scholas-Hassan-Razak/rest-countries-api.git
+cd rest-countries-api
+npm install 
+npm run dev
+```
 
-The designs are in JPG static format. Using JPGs will mean that you'll need to use your best judgment for styles such as `font-size`, `padding` and `margin`. 
+### Live Link
+[Live Link](https://per-scholas-hassan-razak.github.io/rest-countries-api/)
 
-If you would like the design files (we provide Sketch & Figma versions) to inspect the design in more detail, you can [subscribe as a PRO member](https://www.frontendmentor.io/pro).
+### REFERENCES 
 
-There are no assets for this challenge, as the country flags will be pulled from the [REST Countries API](https://restcountries.com) and you can use an icon font library for the icons.
+ - [MUI APPBAR](https://mui.com/material-ui/react-app-bar/)
+ - [MUI SELECT](https://mui.com/material-ui/react-select/)
+ - [MUI THEME](https://mui.com/material-ui/customization/theming/#theme-provider)
+ - [MUI GRID](https://mui.com/material-ui/react-grid/)
 
-There is also a `style-guide.md` file containing the information you'll need, such as color palette and fonts.
+
