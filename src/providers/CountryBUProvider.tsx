@@ -10,7 +10,7 @@ const CountryBUProvider = ({ children }: { children: ReactNode }) => {
 
     (async () => {
       try {
-        const resp = await fetch("/data.json", { signal: controller.signal });
+        const resp = await fetch(`${import.meta.env.BASE_URL}data.json`, { signal: controller.signal });
         if (!resp.ok) {
           throw new Error("Failed to load backup countries data file");
         }

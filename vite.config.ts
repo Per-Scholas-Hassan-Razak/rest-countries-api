@@ -1,8 +1,12 @@
+// vite.config.ts
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// https://vite.dev/config/
-export default defineConfig({
-  base: '/rest-countries-api/', 
+export default defineConfig(({ command }) => ({
+  base: command === 'build' ? '/rest-countries-api/' : '/', 
   plugins: [react()],
-})
+  server: {
+    // optional: auto-open the right path in dev
+    open: command === 'serve' ? '/' : undefined,
+  },
+}))
